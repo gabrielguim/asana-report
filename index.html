@@ -20,7 +20,7 @@
 
         <md-content class="full-heigth" ng-controller="listController">
           <md-list>
-              <md-list-item class="md-3-line" ng-repeat="item in items" ng-click="true">
+              <md-list-item class="md-3-line" ng-repeat="item in items" ng-click="showCustomDialog($event, item)">
                   <div class="md-list-item-text">
                       <h3>{{ item.name }} - {{ item.id }}</h3>
                       <h4 style="white-space: pre;">{{ item.notes }}</h4>
@@ -44,5 +44,6 @@
       <!-- Extras -->
       <script src="js/app.js"></script>
       <script src="js/controllers/listController.js"></script>
+    
     </body>
 </html>
