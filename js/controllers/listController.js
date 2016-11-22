@@ -176,7 +176,7 @@
       "created_at": "2016-11-16T13:51:06.860Z",
       "modified_at": "2016-11-16T14:36:41.056Z",
       "name": "[ET] - Infraestrutura - Monitor de Sensores do Estêncil",
-      "notes": "Session duration: 1h \n\nGlobal Scope:\nMonitor de Sensores do Estêncil\n\nOut of Scope: \nConfiguração do Agente do Estêncil\n\nTarget SUTs: \nSI2 (v4941)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult:\nBug #4124\nBug #5124",
+      "notes": "Session duration: 1h \n\nGlobal Scope:\nMonitor de Sensores do Estêncil\n\nOut of Scope: \nConfiguração do Agente do Estêncil\n\nTarget SUTs: \nSI2 (v4941)\nAndroid: (v4214)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult:\nBug #4124\nBug #5124",
       "assignee": {
         "id": 113908429246757,
         "name": "Gabriel Guimarães"
@@ -246,14 +246,13 @@
 
 			$scope.item = items.getItemToShow();
 
-			console.log($scope.item.notes.split("\n")[0].split(":")[1]);
-
 			$scope.reportItem = {
-				name: item.split("\n"),
-				id: "",
-				duration: "",
-				result: "",
-				version: ""
+				name: $scope.item.name,
+				id: $scope.item.id,
+				duration: $scope.item.notes.split("\n")[0].split(":")[1].split("")[1],
+				result: getResult($scope.item),
+				version: getVersion($scope.item),
+				bugs: ""
 			};
 
 			$scope.hide = function() {
@@ -267,19 +266,52 @@
 			$scope.answer = function(answer) {
 				$mdDialog.hide(answer);
 			};
-		};
 
-		$scope.getResults = function (item){
-			var info = item.notes.split(" ");
-			var index = info.length - 1;
-			var results = [];
+			function getVersion(item) {
+				var version = "";
+				var info = item.notes.split("\n");
 
-			while (info[index] != "Result:"){
-				if (info[index] === ""){
+				var indexVersion = info.indexOf("Target SUTs: ");
+				if (!isEmpty(info[indexVersion + 1])){
+					version = info[indexVersion + 1];
+					if (!isEmpty(info[indexVersion + 2])){
+						version += "; " + info[indexVersion + 2];
+					}
+				};
 
-				} else if (info[index] === ""){
+				function isEmpty(text) {
+					var count = 0;
+					for (var i = 0; i < text.length; i++) {
+						if (text[i] === " "){
+							count++;
+						}
+					};
 
-				}
+					return count === text.length;
+				};
+
+				return version;
+
+			};
+
+			function getResult (item){
+				var info = item.notes.split("\n");
+
+				var index = info.length - 1;
+				var results = [];
+
+				while (info[index] != "Result:"){
+					if (info[index] === "Ok"){
+						// $scope.reportItem.result = "Ok";
+						return "Ok";
+					} else if (info[index] === ""){
+
+					}
+
+					index--;
+				};
+
+
 			};
 		};
 
