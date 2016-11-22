@@ -1,3 +1,7 @@
 .break-line {
   white-space: pre;
 }
+
+.dialog-title {
+  margin: 25px;
+}

@@ -1,5 +1,5 @@
 (function () {
-	angular.module('myApp').controller('listController', function ($scope, $timeout, $mdDialog, $http) {
+	angular.module('myApp').controller('listController', function ($scope, $timeout, $mdDialog, $http, items) {
 		//
 		//
 		// $http.get('https://app.asana.com/api/1.0/projects/114058063528014/tasks?opt_pretty&opt_expand=(this%7Csubtasks%2B)', '').then(
@@ -228,16 +228,45 @@
     }];
 
 		$scope.showCustomDialog = function (ev, item) {
+
+			items.setItemToShow(item);
+
 			$mdDialog.show({
 				controller: DialogController,
-				templateUrl: 'views/detailsDialog.html',
+				templateUrl: '/views/detailsDialog.html',
 				parent: angular.element(document.body),
 				targetEvent: ev,
 				clickOutsideToClose:true,
-				fullscreen: $scope.customFullscreen
 			}).then(function(answer) {
 
 			});
+		};
+
+		function DialogController($scope, $mdDialog) {
+
+			$scope.item = items.getItemToShow();
+
+			console.log($scope.item.notes.split("\n")[0].split(":")[1]);
+
+			$scope.reportItem = {
+				name: item.split("\n"),
+				id: "",
+				duration: "",
+				result: "",
+				version: ""
+			};
+
+			$scope.hide = function() {
+				$mdDialog.hide();
+			};
+
+			$scope.cancel = function() {
+				$mdDialog.cancel();
+			};
+
+			$scope.answer = function(answer) {
+				$mdDialog.hide(answer);
+			};
 		};
 
 		$scope.getResults = function (item){
@@ -253,20 +282,6 @@
 				}
 			};
 		};
-
-		function DialogController($scope, $mdDialog) {
-	    $scope.hide = function() {
-	      $mdDialog.hide();
-	    };
-
-	    $scope.cancel = function() {
-	      $mdDialog.cancel();
-	    };
-
-	    $scope.answer = function(answer) {
-	      $mdDialog.hide(answer);
-	    };
-  	}
 
 	});
 })();

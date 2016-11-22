@@ -1,3 +1,25 @@
-<md-dialog>
-  <h1>asdasd</h1>
+<md-dialog aria-label="Informações do ET" flex="50">
+  <form>
+    <p class="dialog-title">{{ item.name }}</p>
+    <md-dialog-content>
+      <md-subheader class="md-no-sticky">ID: {{ item.id }}</md-subheader>
+
+      <md-list>
+        <md-list-item class="md-2-line">
+          <div class="md-list-item-text">
+            <h3 style="white-space: pre;">{{ item.notes }}</h4>
+          </div>
+        </md-list-item>
+      </md-list>
+
+      <md-divider></md-divider>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button class="md-primary" ng-click="cancel()">
+        Fechar
+      </md-button>
+    </md-dialog-actions>
+  </form>
 </md-dialog>
