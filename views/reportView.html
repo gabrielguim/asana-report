@@ -1,0 +1,49 @@
+<md-card layout="column" flex>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+        Relatório Geral
+    </div>
+  </md-toolbar>
+
+  <md-content layout="row" class="full-heigth">
+    <div class="datepicker">To:
+      <md-datepicker ng-model="myDate" md-placeholder="Enter a date"></md-datepicker>
+    </div>
+    <div class="datepicker">From:
+      <md-datepicker ng-model="myDate" md-placeholder="Enter a date"></md-datepicker>
+    </div>
+    <span flex></span>
+    <md-button aria-label="Total Hours">
+      Total de horas em Testes Exploratórios: {{ getTotalHours() }}
+    </md-button>
+
+  </md-content>
+  <md-divider></md-divider>
+
+  <md-list-item class="md-2-line">
+    <md-divider></md-divider>
+    <div class="md-list-item-text" layout="row">
+      <div flex="50" class="title-table">Name</div>
+      <div flex="20" class="title-table">Assignee</div>
+      <div flex="10" class="title-table">Result</div>
+      <div flex="10" class="title-table">Time Spent</div>
+      <div flex="10" class="title-table">Date</div>
+    </div>
+  </md-list-item>
+
+  <md-content class="full-heigth">
+    <md-list>
+      <md-list-item class="md-2-line" ng-repeat="test in allTests" ng-click="showCustomDialog($event, test)">
+        <div class="md-list-item-text"  layout="row">
+          <div flex="50">{{ test.name }}</div>
+          <div flex="20">{{ test.assignee }}</div>
+          <div flex="10" ng-show="test.result === 'OK'"><i class="material-icons thumb-up">thumb_up</i></div>
+          <div flex="10" ng-show="test.result === 'NG'"><i class="material-icons thumb-down">thumb_down</i></div>
+          <div flex="10">{{ test.duration }}h</div>
+          <div flex="10">{{ test.date | date }}</div>
+        </div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-card>

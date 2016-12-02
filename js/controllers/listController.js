@@ -1,231 +1,11 @@
 (function () {
-	angular.module('myApp').controller('listController', function ($scope, $timeout, $mdDialog, $http, items) {
-		//
-		//
-		// $http.get('https://app.asana.com/api/1.0/projects/114058063528014/tasks?opt_pretty&opt_expand=(this%7Csubtasks%2B)', '').then(
-		// 	function (res) {
-		// 		$timeout(function () {
-		// 			console.log(res.data);
-		// 		}, 50);
-	 // 		},
-		//
-		// 	function (err) { console.log(err) }
-		// );
+	angular.module('myApp').controller('listController', function ($scope, $mdDialog, $http, items) {
 
-		$scope.items = [
-							    {
-							      "id": 214692925860338,
-							      "created_at": "2016-11-17T13:36:16.676Z",
-							      "modified_at": "2016-11-17T13:37:04.947Z",
-							      "name": "[ET] - Infraestrutura - Configuração do agente do estêncil",
-							      "notes": "Session duration: 1h \n\nGlobal Scope:\nConfiguração do agente do estêncil\n\nOut of Scope: \n     \nTarget SUTs: \nSI2 (v4955)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult: Ok",
-							      "assignee": {
-							        "id": 113562395367629,
-							        "name": "Jackson Alves Lino"
-							      },
-							      "completed": false,
-							      "assignee_status": "inbox",
-							      "completed_at": null,
-							      "due_on": "2016-11-17",
-							      "due_at": null,
-							      "projects": [
-							        {
-							          "id": 114058063528014,
-							          "name": "Test Plans"
-							        }
-							      ],
-							      "tags": [],
-							      "workspace": {
-							        "id": 113562381772540,
-							        "name": "Si2-Team"
-							      },
-							      "num_hearts": 0,
-							      "memberships": [
-							        {
-							          "project": {
-							            "id": 114058063528014,
-							            "name": "Test Plans"
-							          },
-							          "section": {
-							            "id": 214692925860336,
-							            "name": "2016-11-17: Exploratory Testing:"
-							          }
-							        }
-							      ],
-							      "subtasks": [],
-							      "hearted": false,
-							      "hearts": [],
-							      "parent": null,
-							      "followers": [
-							        {
-							          "id": 113562395367629,
-							          "name": "Jackson Alves Lino"
-							        }
-							      ]
-							    },{
-      "id": 213746751183363,
-      "created_at": "2016-11-16T13:43:28.226Z",
-      "modified_at": "2016-11-17T03:00:10.211Z",
-      "name": "[ET] - Infraestrutura - Configuração do agente do estêncil",
-      "notes": "Session duration: 1h \n\nGlobal Scope:\nConfiguração do agente do estêncil\n\nOut of Scope: \n     \nTarget SUTs: \nSI2 (v4933)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult: Ok",
-      "assignee": {
-        "id": 113908429246779,
-        "name": "Andson Belo"
-      },
-      "completed": false,
-      "assignee_status": "inbox",
-      "completed_at": null,
-      "due_on": "2016-11-16",
-      "due_at": null,
-      "projects": [
-        {
-          "id": 114058063528014,
-          "name": "Test Plans"
-        }
-      ],
-      "tags": [
-        {
-          "id": 114061102856250,
-          "name": "Exploratory Test"
-        }
-      ],
-      "workspace": {
-        "id": 113562381772540,
-        "name": "Si2-Team"
-      },
-      "num_hearts": 0,
-      "memberships": [
-        {
-          "project": {
-            "id": 114058063528014,
-            "name": "Test Plans"
-          },
-          "section": {
-            "id": 213746751183361,
-            "name": "2016-11-16: Exploratory Testing:"
-          }
-        }
-      ],
-      "subtasks": [],
-      "hearted": false,
-      "hearts": [],
-      "parent": null,
-      "followers": [
-        {
-          "id": 113908429246779,
-          "name": "Andson Belo"
-        }
-      ]
-    },
-    {
-      "id": 213753115709190,
-      "created_at": "2016-11-16T13:51:06.860Z",
-      "modified_at": "2016-11-16T14:36:41.056Z",
-      "name": "[ET] - Infraestrutura - Monitor de Sensores do Estêncil",
-      "notes": "Session duration: 1h \n\nGlobal Scope:\nMonitor de Sensores do Estêncil\n\nOut of Scope: \nConfiguração do Agente do Estêncil\n\nTarget SUTs: \nSI2 (v4941)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult: Ok",
-      "assignee": {
-        "id": 113908429246757,
-        "name": "Gabriel Guimarães"
-      },
-      "parent": null,
-      "completed": true,
-      "assignee_status": "inbox",
-      "completed_at": "2016-11-16T14:36:40.223Z",
-      "due_on": "2016-11-16",
-      "due_at": null,
-      "projects": [
-        {
-          "id": 114058063528014,
-          "name": "Test Plans"
-        }
-      ],
-      "memberships": [
-        {
-          "project": {
-            "id": 114058063528014,
-            "name": "Test Plans"
-          },
-          "section": {
-            "id": 213746751183361,
-            "name": "2016-11-16: Exploratory Testing:"
-          }
-        }
-      ],
-      "subtasks": [],
-      "tags": [
-        {
-          "id": 114061102856250,
-          "name": "Exploratory Test"
-        }
-      ],
-      "workspace": {
-        "id": 113562381772540,
-        "name": "Si2-Team"
-      },
-      "hearted": false,
-      "hearts": [],
-      "num_hearts": 0,
-      "followers": [
-        {
-          "id": 113908429246757,
-          "name": "Gabriel Guimarães"
-        }
-      ]
-    },{
-      "id": 213753115709190,
-      "created_at": "2016-11-16T13:51:06.860Z",
-      "modified_at": "2016-11-16T14:36:41.056Z",
-      "name": "[ET] - Infraestrutura - Monitor de Sensores do Estêncil",
-      "notes": "Session duration: 1h \n\nGlobal Scope:\nMonitor de Sensores do Estêncil\n\nOut of Scope: \nConfiguração do Agente do Estêncil\n\nTarget SUTs: \nSI2 (v4941)\nAndroid: (v4214)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult:\nBug #4124\nBug #5124",
-      "assignee": {
-        "id": 113908429246757,
-        "name": "Gabriel Guimarães"
-      },
-      "parent": null,
-      "completed": true,
-      "assignee_status": "inbox",
-      "completed_at": "2016-11-16T14:36:40.223Z",
-      "due_on": "2016-11-16",
-      "due_at": null,
-      "projects": [
-        {
-          "id": 114058063528014,
-          "name": "Test Plans"
-        }
-      ],
-      "memberships": [
-        {
-          "project": {
-            "id": 114058063528014,
-            "name": "Test Plans"
-          },
-          "section": {
-            "id": 213746751183361,
-            "name": "2016-11-16: Exploratory Testing:"
-          }
-        }
-      ],
-      "subtasks": [],
-      "tags": [
-        {
-          "id": 114061102856250,
-          "name": "Exploratory Test"
-        }
-      ],
-      "workspace": {
-        "id": 113562381772540,
-        "name": "Si2-Team"
-      },
-      "hearted": false,
-      "hearts": [],
-      "num_hearts": 0,
-      "followers": [
-        {
-          "id": 113908429246757,
-          "name": "Gabriel Guimarães"
-        }
-      ]
-    }];
+		$http.get('./js/data.json')
+      .success(function(data) {
+					$scope.rawData = data.data;
+					$scope.allTests = getFormattedItems($scope.rawData);
+			}).error(function() {});
 
 		$scope.showCustomDialog = function (ev, item) {
 
@@ -242,18 +22,146 @@
 			});
 		};
 
+		$scope.columns = [
+			{name: "Name", flex: 60},
+			{name: "Assignee", flex: 10},
+			{name: "Result", flex: 10},
+			{name: "Bugs", flex: 10},
+			{name: "Date", flex: 10}
+		];
+
+		$scope.getTotalHours = function() {
+			totalHours = 0;
+			for (var i = 0; i < $scope.allTests.length; i++) {
+				totalHours += parseInt($scope.allTests[i].duration);
+			}
+
+			return totalHours;
+		};
+
+		function getFormattedItems(allTests){
+			var listFormattedItems = [];
+			var obj = {};
+
+			for (var i = 0; i < allTests.length; i++) {
+				var currentTest = allTests[i];
+
+				if (canCount(currentTest)){
+
+					obj = {
+						id: currentTest.id,
+						assignee: currentTest.assignee.name,
+						name: currentTest.name,
+						date: currentTest.completed_at,
+						duration: getDuration(currentTest),
+						result: getResult(currentTest),
+						version: getVersion(currentTest),
+						bugs: getBugs(currentTest)
+					};
+
+					listFormattedItems.push(obj);
+				}
+			}
+
+			return listFormattedItems;
+		};
+
+		function canCount(item){
+			var retorno_a;
+			var retorno_b;
+			var retorno_c;
+
+			if (item.assignee === null || item.assignee === undefined){
+				retorno_a = false;
+			} else {
+				retorno_a = true;
+			}
+
+			if (item.notes === "" || item.notes === null || item.notes === undefined){
+				retorno_b = false;
+			} else {
+				retorno_b = true;
+			}
+
+			if (item.notes.split("\n")[0].indexOf(":") === -1){
+				retorno_c = false;
+			} else {
+				retorno_c = true;
+			}
+
+			return retorno_a && retorno_b && retorno_c;
+		};
+
+		function getDuration(item){
+			return item.notes.split("\n")[0].split(":")[1].split("")[1]
+		}
+
+		function getVersion(item) {
+			var version = "";
+			var info = item.notes.split("\n");
+
+			var indexVersion = info.indexOf("Target SUTs: ");
+			if (!isEmpty(info[indexVersion + 1])){
+				version = info[indexVersion + 1];
+				if (!isEmpty(info[indexVersion + 2])){
+					version += "; " + info[indexVersion + 2];
+				}
+			};
+
+			function isEmpty(text) {
+				var count = 0;
+				for (var i = 0; i < text.length; i++) {
+					if (text[i] === " "){
+						count++;
+					}
+				};
+
+				return count === text.length;
+			};
+
+			return version;
+
+		};
+
+		function getBugs(item){
+			var info = item.notes.split("\n");
+			var results = [];
+
+			var bugs = "-";
+			for (var i = 0; i < info.length; i++) {
+				if (info[i] === "Result:"){
+					for (var j = i; j < info.length; j++) {
+						if (j != i) {
+							bugs += info[j] + "; ";
+						} else {
+							bugs = "";
+						}
+					}
+				}
+			};
+
+			return bugs;
+
+		};
+
+		function getResult(item){
+			var info = item.notes.split("\n");
+			var results = [];
+
+			var result = "NG"
+			for (var i = 0; i < info.length; i++) {
+				if (info[i] === "Result: Ok"){
+					result = "OK";
+				}
+			};
+
+			return result;
+
+		};
+
 		function DialogController($scope, $mdDialog) {
 
 			$scope.item = items.getItemToShow();
-
-			$scope.reportItem = {
-				name: $scope.item.name,
-				id: $scope.item.id,
-				duration: $scope.item.notes.split("\n")[0].split(":")[1].split("")[1],
-				result: getResult($scope.item),
-				version: getVersion($scope.item),
-				bugs: ""
-			};
 
 			$scope.hide = function() {
 				$mdDialog.hide();
@@ -267,52 +175,6 @@
 				$mdDialog.hide(answer);
 			};
 
-			function getVersion(item) {
-				var version = "";
-				var info = item.notes.split("\n");
-
-				var indexVersion = info.indexOf("Target SUTs: ");
-				if (!isEmpty(info[indexVersion + 1])){
-					version = info[indexVersion + 1];
-					if (!isEmpty(info[indexVersion + 2])){
-						version += "; " + info[indexVersion + 2];
-					}
-				};
-
-				function isEmpty(text) {
-					var count = 0;
-					for (var i = 0; i < text.length; i++) {
-						if (text[i] === " "){
-							count++;
-						}
-					};
-
-					return count === text.length;
-				};
-
-				return version;
-
-			};
-
-			function getResult (item){
-				var info = item.notes.split("\n");
-
-				var index = info.length - 1;
-				var results = [];
-
-				while (info[index] != "Result:"){
-					if (info[index] === "Ok"){
-						// $scope.reportItem.result = "Ok";
-						return "Ok";
-					} else if (info[index] === ""){
-
-					}
-
-					index--;
-				};
-
-
-			};
 		};
 
 	});

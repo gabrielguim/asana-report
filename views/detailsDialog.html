@@ -1,28 +1,28 @@
 <md-dialog aria-label="Informações do ET" flex="50">
   <form>
-    <p class="dialog-title">{{ reportItem.name }}</p>
+    <p class="dialog-title">{{ item.name }}</p>
     <md-dialog-content>
-      <md-subheader class="md-no-sticky">ID: {{ reportItem.id }}</md-subheader>
+      <md-subheader class="md-no-sticky">ID: {{ item.id }}</md-subheader>
 
       <md-list>
         <md-list-item class="md-1-line" ng-click="true">
           <div class="md-list-item-text">
-            <span>Duração da sessão: {{ reportItem.duration }} hora(s)</span>
+            <span>Duração da sessão: {{ item.duration }} hora(s)</span>
           </div>
         </md-list-item>
         <md-list-item class="md-1-line" ng-click="true">
           <div class="md-list-item-text">
-            <span>Versão: {{ reportItem.version }}</span>
+            <span>Versão: {{ item.version }}</span>
           </div>
         </md-list-item>
         <md-list-item class="md-1-line" ng-click="true">
           <div class="md-list-item-text">
-            <span>Resultado: {{ reportItem.result }}</span>
+            <span>Resultado: {{ item.result }}</span>
           </div>
         </md-list-item>
         <md-list-item class="md-1-line" ng-click="true">
           <div class="md-list-item-text">
-            <span>Bugs e Enhancements: {{ reportItem.bugs }}</span>
+            <span>Bugs e Enhancements: {{ item.bugs }}</span>
           </div>
         </md-list-item>
       </md-list>

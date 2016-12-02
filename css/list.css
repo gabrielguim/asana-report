@@ -2,6 +2,50 @@
   white-space: pre;
 }
 
+.md-whiteframe-3dp {
+  height: 75px;
+}
+
+.column-icon{
+  margin-top: 10px;
+}
+
+.title-table {
+  font-weight: bold;
+}
+
+.thumb-up {
+  color: green;
+}
+
+.thumb-down {
+  color: red;
+}
+
 .dialog-title {
   margin: 25px;
+}
+
+.table {
+  margin-top: 5px;
+}
+
+.datepicker {
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.logo-qa {
+  margin: 0;
+  position: absolute;
+  top: 250%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+}
+
+.item-ng {
+  background: rgba(255, 0, 0, 0.3);
 }

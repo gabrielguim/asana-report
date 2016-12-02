@@ -1,0 +1,163 @@
+{
+  "data": [
+    {
+      "id": 157432282994782,
+      "created_at": "2016-07-20T18:13:28.927Z",
+      "modified_at": "2016-07-21T12:17:42.362Z",
+      "name": "[ET] Sensor de Pressão - Histórico",
+      "notes": "Session duration: 1h\n\nGlobal Scope:\n    → Histórico\n    → Exportação\n    → Tabela\n    \n Out of Scope: \n    → Parâmetro \"PRESSURE_SENSOR_SAVE_MEASUREMENT_INTERVAL\"\n\nTarget SUTs: \nSI2 (v3669)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult: Ok\n\nBug: \n Bug #33 (Redmine)\n Bug #34 (Redmine)\nEnhancement #36 (Redmine)",
+      "assignee": {
+        "id": 113908429246779,
+        "name": "Andson Belo"
+      },
+      "parent": null,
+      "completed": true,
+      "assignee_status": "inbox",
+      "completed_at": "2016-07-21T12:17:46.716Z",
+      "due_on": null,
+      "due_at": null,
+      "projects": [
+        {
+          "id": 114058063528014,
+          "name": "Test Plans"
+        }
+      ],
+      "memberships": [
+        {
+          "project": {
+            "id": 114058063528014,
+            "name": "Test Plans"
+          },
+          "section": {
+            "id": 157432282994770,
+            "name": "2016-07-20 Exploratory Testing:"
+          }
+        }
+      ],
+      "subtasks": [],
+      "tags": [],
+      "workspace": {
+        "id": 113562381772540,
+        "name": "Si2-Team"
+      },
+      "hearted": false,
+      "hearts": [],
+      "num_hearts": 0,
+      "followers": [
+        {
+          "id": 113908429246779,
+          "name": "Andson Belo"
+        }
+      ]
+    },
+    {
+      "id": 157672205347521,
+      "created_at": "2016-07-20T19:03:35.118Z",
+      "modified_at": "2016-07-21T14:56:55.726Z",
+      "name": "[ET] Sensor de Pressão - Histórico",
+      "notes": "Session duration: 1h\n\nGlobal Scope:\n    → Parâmetro \"PRESSURE_SENSOR_SAVE_MEASUREMENT_INTERVAL\"\n    →  Medições dentro e fora do range\n    →  Alteração do Range\n    \n Out of Scope: \n    \n\nTarget SUTs: \nSI2 (v3669)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult: Ok\n\nBug: \nKnow Issue\n Medições fora do ideal estão sendo registradas várias vezes sem obedecer o parâmetro do sistema \"PRESSURE_SENSOR_NOTIFICATION_COOL_DOWN_TIME\"\nBug #35  (A data do arquivo exportado está errada )\nBug #2100\n",
+      "assignee": {
+        "id": 113562395367629,
+        "name": "Jackson Alves Lino"
+      },
+      "parent": null,
+      "completed": true,
+      "assignee_status": "inbox",
+      "completed_at": "2016-07-21T14:56:56.924Z",
+      "due_on": "2016-07-20",
+      "due_at": null,
+      "projects": [
+        {
+          "id": 114058063528014,
+          "name": "Test Plans"
+        }
+      ],
+      "memberships": [
+        {
+          "project": {
+            "id": 114058063528014,
+            "name": "Test Plans"
+          },
+          "section": {
+            "id": 157432282994770,
+            "name": "2016-07-20 Exploratory Testing:"
+          }
+        }
+      ],
+      "subtasks": [],
+      "tags": [],
+      "workspace": {
+        "id": 113562381772540,
+        "name": "Si2-Team"
+      },
+      "hearted": false,
+      "hearts": [],
+      "num_hearts": 0,
+      "followers": [
+        {
+          "id": 113562395367629,
+          "name": "Jackson Alves Lino"
+        }
+      ]
+    },
+    {
+      "id": 158577066590326,
+      "created_at": "2016-07-22T11:26:10.485Z",
+      "modified_at": "2016-07-26T19:59:22.170Z",
+      "name": "[ET] Sensor de Pressão - Conversão",
+      "notes": "Session duration: 1h\n\nGlobal Scope:\n    → Conversão de Valores Decimais;\n    → Estresse de Conversão de Valores ;\n    \nOut of Scope: -\n     \nTarget SUTs: \nSI2 (v3676)\n\nEnvironment: \nBrowser: Chrome 32\n\nResult:\nBug #37",
+      "assignee": {
+        "id": 113908429246757,
+        "name": "Gabriel Guimarães"
+      },
+      "parent": null,
+      "completed": true,
+      "assignee_status": "inbox",
+      "completed_at": "2016-07-22T12:20:27.010Z",
+      "due_on": "2016-07-22",
+      "due_at": null,
+      "projects": [
+        {
+          "id": 114058063528014,
+          "name": "Test Plans"
+        }
+      ],
+      "memberships": [
+        {
+          "project": {
+            "id": 114058063528014,
+            "name": "Test Plans"
+          },
+          "section": {
+            "id": 156965012905729,
+            "name": "2016-07-19 Exploratory Testing:"
+          }
+        }
+      ],
+      "subtasks": [],
+      "tags": [
+        {
+          "id": 114061102856250,
+          "name": "Exploratory Test"
+        }
+      ],
+      "workspace": {
+        "id": 113562381772540,
+        "name": "Si2-Team"
+      },
+      "hearted": false,
+      "hearts": [],
+      "num_hearts": 0,
+      "followers": [
+        {
+          "id": 113908429246779,
+          "name": "Andson Belo"
+        },
+        {
+          "id": 113908429246757,
+          "name": "Gabriel Guimarães"
+        }
+      ]
+    }
+  ]
+}
